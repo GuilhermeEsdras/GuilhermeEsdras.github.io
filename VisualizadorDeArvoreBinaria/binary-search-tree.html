@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title>BinaryTreeVisualiser - Binary Search Tree</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="title" content="Web site" />
+        <meta name="description" content="Site description here" />
+        <meta name="keywords" content="keywords here" />
+        <meta name="language" content="en" />
+        <meta name="subject" content="Site subject here" />
+        <meta name="robots" content="All" />
+        <meta name="copyright" content="Your company" />
+        <meta name="abstract" content="Site description here" />
+        <meta name="MSSmartTagsPreventParsing" content="true" />
+
+        <!-- styles -->
+        <link id="theme" rel="stylesheet" type="text/css" href="styles/style.css" title="theme" />
+        <script type="text/javascript" src="styles/style.js"></script>
+        <link href="styles/jquery/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet" />
+
+        <!-- third-party scripts: jQuery, jQuery UI and JSGL -->
+        <script type="text/javascript" src="btv/third-party/jsgl.js"></script>
+        <script type="text/javascript" src="btv/third-party/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="btv/third-party/jquery-ui-1.10.3.custom.js"></script>
+
+        <!-- my scripts -->
+        <script type="text/javascript" src="btv/btv.js"></script>
+        <script type="text/javascript" src="btv/Elements.js"></script>
+        <script type="text/javascript" src="btv/BinaryTree.js"></script>
+        <script type="text/javascript" src="btv/Algorithms.js"></script>
+        <script type="text/javascript" src="btv/Visualiser.js"></script>
+        <script type="text/javascript" src="btv/Controllers.js"></script>
+
+    </head>
+    <body> 
+        <div id="wrapper"> 
+            <div id="container"> 
+                <!--  content -->  
+                <div id="content"> 
+                    <div style="margin-top:1px;">   
+                        <div class="clear"></div>
+
+                        <h1 id="binary_search_tree" class="anchor">Visualizador de Árvore Binária</h1>
+
+                        <div id="controlDiv"></div>
+                        <div id="drawDiv"></div>
+
+                        <script type="text/javascript">
+                            var c = new btv.BinarySearchTreeController(document.getElementById("controlDiv"), document.getElementById("drawDiv"));            
+                        </script>
+
+                        <div class="clear"></div>
+
+                        <div class="subsection">
+                            <h2 id="graphic_elements" class="anchor left_clear">Elementos gráficos</h2>
+                            <p>
+                                Aqui estão listados todos os elementos gráficos usados na aplicação e seus significados.
+                            </p>
+                            <table class="instructions">    
+                                <thead>
+                                    <tr>
+                                        <th class="graphicElement">Gráfico</th>
+                                        <th>Significado</th>
+                                        <th>Descrição</th >
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/node.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Nó</td>
+                                        <td>
+                                            Nó com seu respectivo valor.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/selected_node.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Nó selecionado</td>
+                                        <td>
+                                            O nó selecionado é destacado com uma borda vermelha. Você pode selecionar o nó clicando nele.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/edge.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Aresta</td>
+                                        <td>
+                                            Uma aresta é uma referência de um nó para outro. </br>
+                                            O nó referenciado é chamado de <strong>filho</strong> do nó que o referencia. </br>
+                                            O nó referenciando é chamado de <strong>pai</strong> do nó referenciado. </br>
+                                            Ou seja, por exemplo: Se o nó no lado da ponta da seta é igual a 20 e o nó do outro lado da seta é igual a 30, então o nó 30 é <strong>pai</strong> do nó 20, e o nó 20, por sua vez, é o <strong>filho</strong> do nó 30.
+                                        </td>
+                                    </tr>                                
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/parent_with_children.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Pai e seus filhos</td>
+                                        <td>
+                                            Em uma árvore binária há um limite máximo de dois filhos por nó para qualquer nó da árvore - o filho esquerdo e o filho direito.
+                                        </td>
+                                    </tr>                                
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/comparison_signs.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Sinais de comparação</td>
+                                        <td>
+                                            Algoritmos muito usados para comparar dois nós (e seus valores). </br>
+                                            Nessa aplicação, pode ser que um destes sinais seja mostrado na parte superior central do nó em cada passo do algoritmo que use comparação.
+                                        </td>
+                                    </tr>                                                                
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/continue_in_parent,left_child,right_child.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Continuar para o pai/<wbr/>filho&nbsp;esquerdo/<wbr/>filho direito</td>
+                                        <td>
+                                            Algoritmos geralmente percorrem uma árvore ou chamam eles mesmos recursivamente em um filho do nó que está sendo processado. </br>
+                                            Estes elementos gráficos irão lhe mostrar qual é o próximo nó a ser visitado.
+                                        </td>
+                                    </tr>  
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/no_left,right_child.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Sem filho esquerdo/<wbr/>direito</td>
+                                        <td>
+                                            Quando um nó não possuir filhos esquerdo ou direito.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="graphicElement"><img src="images/instructions/enter,leave_tree.png" alt="node"/></td>
+                                        <td class="meaning">Entrar/<wbr/>sair da árvore</td>
+                                        <td>
+                                            Uma forma de visualizar o início ou o fim de um algoritmo que percorre uma árvore.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/came_from_the_left,right.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Veio do filho esquerdo/<wbr/>direito</td>
+                                        <td>
+                                            As vezes é importante saber se o algoritmo veio do filho esquerdo ou do filho direito. </br>
+                                            Estas setas indicam se esta condição é satisfeita.
+                                        </td>
+                                    </tr>                                  
+                                    <tr>
+                                        <td class="graphicElement">
+                                            <img src="images/instructions/did_not_come_from_the_left,right.png" alt="node"/>
+                                        </td>
+                                        <td class="meaning">Não veio do filho esquerdo/<wbr/>direito</td>
+                                        <td>
+                                            Assim como o anterior, mas indicando o contrário (quando a condição não é satisfeita).
+                                        </td>
+                                    </tr>                                                                  
+                                    <tr>
+                                        <td class="graphicElement"><img src="images/instructions/array.png" alt="node"/></td>
+                                        <td class="meaning">Array (Lista)</td>
+                                        <td>
+                                            Uma árvore pode ser representada por um Array, transformada em um Array ou ser construída à partir de um Array. </br>
+                                            O Array é indexado (1, 2, 3, ... 7) e possui valores (2, 5, 22, 39, 44). </br>
+                                            Os últimos dois índeces permanecem vazios.
+                                        </td>
+                                    </tr>   
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>  
+                    <div class="clear"></div> 
+                </div>  
+            </div>  
+            <!-- end container --> 
+        </div>  
+        
+    </body>
+</html>
