@@ -628,14 +628,14 @@ btv.BinarySearchTreeController = function(controlsDiv, treeDiv) {
 '<div class="item">' + 
 '<form id="BSTInsertForm" action="javascript: btv.controller.insertButton()">' +
 '<input id="BSTInsertButton" type="submit" value="Inserir"/> ' +
-'value: <input id="BSTInsertText" type="text" size="1"/>' +
+'Valor: <input id="BSTInsertText" type="text" size="1"/>' +
 '</form>' +
 '</div>' +
 
 '<div class="item">' + 
 '<form id="BSTFindForm" action="javascript:btv.controller.findButton()">' +
 '<input id="BSTFindButton" type="submit" value="Buscar"/> ' +
-'value: <input id="BSTFindText" type="text" size="1"/>' +
+'Valor: <input id="BSTFindText" type="text" size="1"/>' +
 '</form>' +    
 '</div>' +
 
